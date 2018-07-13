@@ -1,4 +1,4 @@
-package com.example.kirin_dev31.toreger;
+package com.example.kirin_dev31.toreger.models;
 
 /**
  * ログインPreference

@@ -1,12 +1,14 @@
-package com.example.kirin_dev31.toreger;
+package com.example.kirin_dev31.toreger.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.kirin_dev31.toreger.R;
 
-public class SplashActivity extends Activity {
+
+public class SplashActivity extends Activity{
 
     Handler mHandler = new Handler();
 
@@ -27,5 +29,6 @@ public class SplashActivity extends Activity {
                 SplashActivity.this.finish();
             }
         }, 1 * 1000); // 2秒後に実行
+
     }
 }
