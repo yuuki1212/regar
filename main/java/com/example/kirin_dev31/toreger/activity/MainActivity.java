@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.example.kirin_dev31.toreger.R;
 
+
 public class MainActivity extends Activity {
 
     @Override

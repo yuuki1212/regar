@@ -1,6 +1,8 @@
 package com.example.kirin_dev31.toreger.models;
 
 public class User {
+    // ID デフォルト値は-1
+    private int id = -1;
     // ユーザーID
     private String userId = "";
     // パスワード
@@ -25,6 +27,14 @@ public class User {
     private int preferenceCode;
     // その他の住所
     private String address;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUserId() {
         return userId;

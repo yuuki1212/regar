@@ -1,3 +1,11 @@
 <resources>
+    <!-- アプリケーション -->
     <string name="app_name">Toreger</string>
+
+    <!-- ログインView -->
+    <string name="text_email">Email</string>
+    <string name="hint_email">半角英数字</string>
+    <string name="text_password">Password</string>
+    <string name="hint_password">半角英数字8文字以上</string>
+    <string name="login_submit">Sign in </string>
 </resources>
