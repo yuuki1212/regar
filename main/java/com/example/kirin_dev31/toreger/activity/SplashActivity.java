@@ -7,6 +7,7 @@ import android.content.Loader;
 import android.os.Bundle;
 
 import com.example.kirin_dev31.toreger.R;
+import com.example.kirin_dev31.toreger.models.PreferenceUtil;
 import com.example.kirin_dev31.toreger.models.User;
 import com.example.kirin_dev31.toreger.network.loader.LoginLoader;
 import com.example.kirin_dev31.toreger.views.Constants;
@@ -22,9 +23,23 @@ public class SplashActivity extends Activity{
 
         Bundle args = new Bundle();
 
-        args.putString("LOGIN_ID", "");
+        // Preferenceから保存済みユーザー情報の取得
+        String userId = PreferenceUtil.getFindById(this, PreferenceUtil.USER_ID_KEY);
+        String password = PreferenceUtil.getFindById(this, PreferenceUtil.PASSWPRD_KEY);
 
-        getLoaderManager().initLoader(Constants.LOADER_ID.LOADER_LOGIN_ID, args, mCallBack);
+        if (userId == null || password == null) {
+            // 取得できなければログイン画面に遷移
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);]
+            startActivity(intent);
+
+            SplashActivity.this.finish();
+        } else {
+            // 取得で来たらログイン処理を続行
+            args.putString("USER_ID", userId);
+            args.putString("PASSWORD", password);
+            getLoaderManager().initLoader(Constants.LOADER_ID.LOADER_LOGIN_ID, args, mCallBack);
+        }
+
     }
 
     private final LoaderManager.LoaderCallbacks<User> mCallBack = new LoaderManager.LoaderCallbacks<User>() {
