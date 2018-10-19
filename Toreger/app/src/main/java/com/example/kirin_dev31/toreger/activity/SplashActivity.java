@@ -29,7 +29,7 @@ public class SplashActivity extends Activity{
 
         if (userId == null || password == null) {
             // 取得できなければログイン画面に遷移
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);]
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
 
             SplashActivity.this.finish();
